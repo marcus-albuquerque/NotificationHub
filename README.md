@@ -39,75 +39,77 @@ O **NotificationHub** é uma plataforma completa que gerencia o ciclo de vida de
 
 ## 📁 Estrutura do Projeto
 
+```text
 NotificationHub/
-├── client/                          # Frontend React com Vite
+├── client/                           # Frontend React com Vite
 │   ├── src/
-│   │   ├── api/                    # Cliente HTTP tipado para backend
-│   │   │   └── client.ts           # Instância axios com interceptadores
+│   │   ├── api/                     # Cliente HTTP tipado para backend
+│   │   │   └── client.ts            # Instância axios com interceptadores
 │   │   ├── components/
-│   │   │   └── Layout.tsx          # Layout principal com navegação
+│   │   │   └── Layout.tsx           # Layout principal com navegação
 │   │   ├── pages/
-│   │   │   ├── FarmsPage.tsx       # Lista de fazendas
-│   │   │   ├── EventsPage.tsx      # Histórico de eventos com paginação
+│   │   │   ├── FarmsPage.tsx        # Lista de fazendas
+│   │   │   ├── EventsPage.tsx       # Histórico de eventos com paginação
 │   │   │   ├── NotificationsPage.tsx # Lista de notificações
-│   │   │   └── SimulatorPage.tsx   # Simulador de eventos
-│   │   ├── App.tsx                 # Componente raiz
-│   │   └── main.tsx                # Entrada da aplicação
-│   ├── index.html                  # Template HTML
-│   ├── vite.config.ts              # Configuração Vite
-│   ├── tailwind.config.js          # Configuração Tailwind
+│   │   │   └── SimulatorPage.tsx    # Simulador de eventos
+│   │   ├── App.tsx                  # Componente raiz
+│   │   └── main.tsx                 # Entrada da aplicação
+│   ├── index.html                   # Template HTML
+│   ├── vite.config.ts               # Configuração Vite
+│   ├── tailwind.config.js           # Configuração Tailwind
 │   └── package.json
 │
-├── src/                            # Backend Node.js/Express
+├── src/                             # Backend Node.js/Express
 │   ├── config/
-│   │   ├── database.ts             # Conexão PostgreSQL
-│   │   ├── redis.ts                # Conexão Redis
-│   │   └── queue.ts                # Configuração Bull queue
+│   │   ├── database.ts              # Conexão PostgreSQL
+│   │   ├── redis.ts                 # Conexão Redis
+│   │   └── queue.ts                 # Configuração Bull queue
 │   ├── services/
-│   │   ├── event-receiver.ts       # Recebimento de eventos
-│   │   ├── data-validator.ts       # Validação de eventos
-│   │   ├── duplicate-detector.ts   # Detecção de duplicatas
-│   │   ├── rule-engine.ts          # Motor de regras
+│   │   ├── event-receiver.ts        # Recebimento de eventos
+│   │   ├── data-validator.ts        # Validação de eventos
+│   │   ├── duplicate-detector.ts    # Detecção de duplicatas
+│   │   ├── rule-engine.ts           # Motor de regras
 │   │   ├── notification-generator.ts # Geração de notificações
-│   │   ├── notification-provider.ts  # Interface de provedores
+│   │   ├── notification-provider.ts # Interface de provedores
 │   │   ├── mock-whatsapp-provider.ts # Provider mock para testes
 │   │   ├── notification-dispatcher.ts # Envio de notificações
-│   │   └── event-processor.ts      # Orquestrador do pipeline
+│   │   └── event-processor.ts       # Orquestrador do pipeline
 │   ├── types/
-│   │   └── index.ts                # Tipos TypeScript compartilhados
+│   │   └── index.ts                 # Tipos TypeScript compartilhados
 │   ├── utils/
-│   │   ├── logger.ts               # Logging estruturado
-│   │   └── cache-key.ts            # Geração de chaves Redis
+│   │   ├── logger.ts                # Logging estruturado
+│   │   └── cache-key.ts             # Geração de chaves Redis
 │   ├── __tests__/
 │   │   ├── config/
-│   │   │   └── queue.test.ts       # Testes da fila
+│   │   │   └── queue.test.ts        # Testes da fila
 │   │   ├── services/
 │   │   │   ├── mock-whatsapp-provider.test.ts
 │   │   │   ├── notification-dispatcher.test.ts
 │   │   │   └── notification-provider.test.ts
 │   │   └── duplicate-detector.test.ts
-│   ├── app.ts                      # Configuração Express
-│   ├── index.ts                    # Entrada da aplicação
-│   └── app.test.ts                 # Testes básicos
+│   ├── app.ts                       # Configuração Express
+│   ├── index.ts                     # Entrada da aplicação
+│   └── app.test.ts                  # Testes básicos
 │
 ├── database/
 │   ├── migrations/
-│   │   └── 001_create_tables.sql   # Schema do banco
+│   │   └── 001_create_tables.sql    # Schema do banco
 │   ├── seeds/
-│   │   └── 001_seed_demo_data.sql  # Dados de demonstração
-│   ├── init.sh                     # Script de inicialização (Linux/Mac)
-│   ├── init.bat                    # Script de inicialização (Windows)
-│   ├── migrate.js                  # Runner de migrations
-│   ├── SCHEMA_REFERENCE.md         # Documentação do schema
-│   └── SETUP_GUIDE.md              # Guia de configuração do banco
+│   │   └── 001_seed_demo_data.sql   # Dados de demonstração
+│   ├── init.sh                      # Script de inicialização (Linux/Mac)
+│   ├── init.bat                     # Script de inicialização (Windows)
+│   ├── migrate.js                   # Runner de migrations
+│   ├── SCHEMA_REFERENCE.md          # Documentação do schema
+│   └── SETUP_GUIDE.md               # Guia de configuração do banco
 │
-├── .env.example                    # Template de variáveis de ambiente
-├── .eslintrc.json                  # Configuração ESLint
-├── .prettierrc.json                # Configuração Prettier
-├── tsconfig.json                   # Configuração TypeScript
-├── jest.config.js                  # Configuração Jest
-├── package.json                    # Dependencies do backend
-└── README.md                       # Este arquivo
+├── .env.example                     # Template de variáveis de ambiente
+├── .eslintrc.json                   # Configuração ESLint
+├── .prettierrc.json                 # Configuração Prettier
+├── tsconfig.json                    # Configuração TypeScript
+├── jest.config.js                   # Configuração Jest
+├── package.json                     # Dependencies do backend
+└── README.md                        # Este arquivo
+```
 
 
 ## ⚙️ Pré-requisitos
