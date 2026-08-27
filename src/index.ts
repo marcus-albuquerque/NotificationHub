@@ -6,6 +6,7 @@
 import dotenv from 'dotenv';
 import { createApp } from './app';
 import { initializeDatabase } from './config/database';
+import { demoDataLoader } from './services/demo-data-loader';
 
 // Load environment variables
 dotenv.config();
@@ -23,6 +24,10 @@ async function start() {
     // Initialize database
     console.log('Initializing database...');
     await initializeDatabase();
+
+    // Load demo data if enabled
+    console.log('Checking demo data configuration...');
+    await demoDataLoader.loadDemoData();
 
     // Create Express app
     const app = createApp();

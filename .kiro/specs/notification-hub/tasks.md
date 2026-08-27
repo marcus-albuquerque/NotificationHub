@@ -75,7 +75,7 @@ Implementation of a notification system for smart farming that processes IoT sen
 
 ### Phase 3: Rule Engine and Duplicate Detection
 
-- [ ] 8. Implement Duplicate Detector component
+- [x] 8. Implement Duplicate Detector component
   - Create DuplicateDetector class with detect(event) method
   - Generate cache key: hash(farmId + deviceId + sensorType + value)
   - Check Redis for recent event (within 5 minutes)
@@ -88,7 +88,7 @@ Implementation of a notification system for smart farming that processes IoT sen
   - Test TTL expiration: after 5+ minutes, re-detection should be allowed
   - _Validates: Requirements 3.1, 3.2, 3.3_
 
-- [ ] 9. Implement Rule Engine with built-in rules registry
+- [x] 9. Implement Rule Engine with built-in rules registry
   - Create RuleEngine class with applyRules(event) method
   - Define 6 built-in rules as objects: HIGH_AIR_TEMPERATURE, LOW_AIR_HUMIDITY, LOW_SOIL_MOISTURE, LOW_WATER_RESERVOIR, LOW_SILO_LEVEL, EQUIPMENT_FAILURE
   - Each rule has: ruleId, name, sensorType, condition function, notificationTemplate
@@ -113,7 +113,7 @@ Implementation of a notification system for smart farming that processes IoT sen
 
 ### Phase 4: Notification Generation and Dispatch
 
-- [ ] 10. Implement Notification Generator component
+- [x] 10. Implement Notification Generator component
   - Create NotificationGenerator class with generate(event, firedRules) method
   - For each fired rule, create notification object with all required fields
   - Generate notificationId (UUID), include eventId, farmId, deviceId, ruleId, ruleName
@@ -134,7 +134,7 @@ Implementation of a notification system for smart farming that processes IoT sen
   - Support future providers (RealWhatsApp, SMS, Email)
   - _Requirements: 10.2, 10.5_
 
-- [ ] 12. Implement Notification Dispatcher component
+- [x] 12. Implement Notification Dispatcher component
   - Create NotificationDispatcher class with dispatch(notification) method
   - Get producer from farm association
   - Call NotificationProvider.send(producer, message)
@@ -144,14 +144,14 @@ Implementation of a notification system for smart farming that processes IoT sen
   - Return {success: boolean, notification, error?: string}
   - _Requirements: 10.1, 10.3, 10.4_
 
-- [ ]\* 12.1 Write property tests for Notification Dispatcher
+- [ ] 12.1 Write property tests for Notification Dispatcher
   - **Property 16: Dispatch Attempt Logging** - Notification SHALL be sent through provider and result recorded
   - Test retry mechanism: failed notifications added to queue
   - _Validates: Requirements 10.1, 10.3, 10.4_
 
 ### Phase 5: Event History and Pipeline Orchestration
 
-- [ ] 13. Implement Event History data access layer
+- [x] 13. Implement Event History data access layer
   - Create EventHistory class with methods:
     - save(eventHistoryEntry): persist to PostgreSQL
     - getByEventId(eventId): retrieve complete entry
@@ -168,7 +168,7 @@ Implementation of a notification system for smart farming that processes IoT sen
   - Handle both success and error paths, logging all results
   - _Requirements: 1.1, 2.1, 3.1, 4.1, 10.1, 11.1, 17.1_
 
-- [ ]\* 14.1 Write property tests for Event History and Pipeline
+- [ ] 14.1 Write property tests for Event History and Pipeline
   - **Property 1: Event Persistence** - Valid event SHALL be persisted before processing
   - **Property 17: Event History Consolidation** - Complete event SHALL link to all pipeline stages with timestamps
   - **Property 18: No-Action Pipeline Logging** - Valid event without fired rules SHALL be logged with "no rules fired" status
@@ -194,7 +194,7 @@ Implementation of a notification system for smart farming that processes IoT sen
   - Create main layout with navigation
   - _Requirements: 12.1, 13.1, 14.1_
 
-- [-] 17. Implement Farm View page
+- [x] 17. Implement Farm View page
   - Display list of farms: farmId, name, sensor count, producer name
   - Add farm selection to show detailed view
   - Show list of devices for selected farm with last reading
@@ -202,7 +202,7 @@ Implementation of a notification system for smart farming that processes IoT sen
   - Add refresh button for real-time updates
   - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5_
 
-- [~] 18. Implement Events View page
+- [x] 18. Implement Events View page
   - Display paginated list of events (20 per page) for selected farm
   - Show: eventId, deviceId, sensorType, value, unit, timestamp, status
   - Implement filters: by sensorType, date range, status (valid/rejected/duplicate)
@@ -210,7 +210,7 @@ Implementation of a notification system for smart farming that processes IoT sen
   - Sort by timestamp descending (most recent first)
   - _Requirements: 13.1, 13.2, 13.3, 13.4, 13.5_
 
-- [~] 19. Implement Notifications View page
+- [x] 19. Implement Notifications View page
   - Display paginated list of notifications (20 per page) for selected farm
   - Show: notificationId, fired rule, message, generation timestamp, send status
   - Implement filters: by fired rule, date range, send status
@@ -219,7 +219,7 @@ Implementation of a notification system for smart farming that processes IoT sen
   - Sort by timestamp descending
   - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5_
 
-- [~] 20. Implement Event Simulator form
+- [x] 20. Implement Event Simulator form
   - Create form with fields: farmId (dropdown), deviceId (dropdown), sensorType (dropdown), value (number), unit (text)
   - Auto-populate deviceId list based on selected farm
   - Suggest typical values and valid ranges for selected sensorType
@@ -229,7 +229,7 @@ Implementation of a notification system for smart farming that processes IoT sen
 
 ### Phase 7: Backend API Endpoints and Demo Data
 
-- [ ] 21. Implement Farm and Producer management endpoints
+- [x] 21. Implement Farm and Producer management endpoints
   - POST /api/farms: create new farm
   - GET /api/farms: list all farms with pagination
   - GET /api/farms/:farmId: get farm details with devices
@@ -237,14 +237,14 @@ Implementation of a notification system for smart farming that processes IoT sen
   - GET /api/producers: list all producers
   - _Requirements: 18.1, 18.2, 18.3, 18.4, 18.5_
 
-- [ ] 22. Implement Event History query endpoints
+- [x] 22. Implement Event History query endpoints
   - GET /api/history/:eventId: retrieve complete event history entry
   - GET /api/history/farm/:farmId: retrieve paginated farm events
   - GET /api/history/device/:deviceId: retrieve paginated device events
   - GET /api/history/search: search events by date range, status, sensorType
   - _Requirements: 11.6, 17.2, 17.4_
 
-- [ ] 23. Implement Demo Data Loader
+- [x] 23. Implement Demo Data Loader
   - Create DemoDataLoader class that runs on application startup (can be disabled via env var)
   - Create farm: "Boa EsperanÃ§a" (farm-001)
   - Create producer: "JoÃ£o Silva" (producer-001) with phone +5535999999999

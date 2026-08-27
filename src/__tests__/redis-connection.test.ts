@@ -4,7 +4,6 @@
  */
 
 import { getRedisClient, disconnectRedis, checkRedisHealth } from '../config/redis';
-import logger from '../utils/logger';
 
 describe('Redis Connection and Configuration', () => {
   afterAll(async () => {
@@ -14,7 +13,7 @@ describe('Redis Connection and Configuration', () => {
   describe('Redis client initialization', () => {
     it('should initialize Redis client with correct configuration', async () => {
       const client = await getRedisClient();
-      
+
       expect(client).toBeDefined();
       expect(client).not.toBeNull();
     });
@@ -22,7 +21,7 @@ describe('Redis Connection and Configuration', () => {
     it('should reuse existing client on subsequent calls (connection pooling)', async () => {
       const client1 = await getRedisClient();
       const client2 = await getRedisClient();
-      
+
       expect(client1).toBe(client2);
     });
 
@@ -49,7 +48,7 @@ describe('Redis Connection and Configuration', () => {
   describe('Redis health check', () => {
     it('should return true when Redis is healthy', async () => {
       const isHealthy = await checkRedisHealth();
-      
+
       expect(typeof isHealthy).toBe('boolean');
       // Note: This test assumes Redis is running. In CI/CD, this might be skipped
       // or mocked depending on the test environment setup
@@ -187,13 +186,13 @@ describe('Redis Connection and Configuration', () => {
     it('should handle large values', async () => {
       const client = await getRedisClient();
       const testKey = 'test:large:' + Date.now();
-      
+
       // Create a large value (1MB)
       const largeValue = 'x'.repeat(1024 * 1024);
 
       await client.set(testKey, largeValue);
       const retrieved = await client.get(testKey);
-      
+
       expect(retrieved).toBe(largeValue);
       expect(retrieved?.length).toBe(1024 * 1024);
 
@@ -208,7 +207,7 @@ describe('Redis Connection and Configuration', () => {
 
       await client.set(specialKey, specialValue);
       const retrieved = await client.get(specialKey);
-      
+
       expect(retrieved).toBe(specialValue);
 
       // Clean up

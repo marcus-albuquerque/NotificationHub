@@ -67,6 +67,7 @@ describe('Bull Queue Configuration', () => {
    * Validates that queue initializes with correct Redis configuration
    */
   it('should initialize queue with correct Redis configuration', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
 
     expect(queueInstance).toBeDefined();
@@ -84,6 +85,7 @@ describe('Bull Queue Configuration', () => {
    * Validates that jobs are configured with correct retry settings
    */
   it('should configure retry strategy: max 3 attempts with 5-minute delays', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
     const notification = createTestNotification();
 
@@ -105,6 +107,7 @@ describe('Bull Queue Configuration', () => {
    * Validates that notifications can be added to the queue
    */
   it('should add notification to retry queue successfully', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
     const notification = createTestNotification();
 
@@ -125,6 +128,7 @@ describe('Bull Queue Configuration', () => {
    * Validates that queue statistics are properly reported
    */
   it('should report correct queue statistics', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
 
     // Initially queue should be empty
@@ -151,6 +155,7 @@ describe('Bull Queue Configuration', () => {
    * Validates that queue can be safely shut down
    */
   it('should gracefully shutdown queue', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
     const notification = createTestNotification();
 
@@ -161,6 +166,7 @@ describe('Bull Queue Configuration', () => {
     await shutdownQueue(5000);
 
     // After shutdown, getQueue should return null
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueAfterShutdown = getQueue();
     // Queue is set to null in shutdown but we can't directly test this
     // Instead, verify shutdown completes without error
@@ -172,6 +178,7 @@ describe('Bull Queue Configuration', () => {
    * Validates batch adding of notifications
    */
   it('should handle multiple notifications in queue', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
     const notifications = [
       createTestNotification({ ruleId: 'HIGH_AIR_TEMPERATURE' }),
@@ -197,6 +204,7 @@ describe('Bull Queue Configuration', () => {
    * Validates queue clearing functionality
    */
   it('should clear queue of all jobs', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
 
     // Add some jobs
@@ -228,6 +236,7 @@ describe('Bull Queue Configuration', () => {
     expect(process.env.BULL_QUEUE_BACKOFF).toBeDefined();
 
     // Initialize with env config
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
     expect(queueInstance).toBeDefined();
 
@@ -242,6 +251,7 @@ describe('Bull Queue Configuration', () => {
    * Validates that high-priority notifications can be queued
    */
   it('should support priority-based job queuing', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
 
     // Add high priority job
@@ -267,6 +277,7 @@ describe('Bull Queue Configuration', () => {
    * Validates that queue handles initialization errors gracefully
    */
   it('should handle queue errors appropriately', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
     expect(queueInstance).toBeDefined();
 
@@ -305,6 +316,7 @@ describe('Queue Integration with Notification Dispatcher', () => {
    * Validates that jobs progress through queue lifecycle
    */
   it('should track job lifecycle: pending -> processing -> completed/failed', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
     const notification = createTestNotification();
 
@@ -328,6 +340,7 @@ describe('Queue Integration with Notification Dispatcher', () => {
    * Validates notification-specific queue settings
    */
   it('should configure queue specifically for notification retries', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const queueInstance = await initializeQueue();
     expect(queueInstance.name).toBe('notification-retry');
 
