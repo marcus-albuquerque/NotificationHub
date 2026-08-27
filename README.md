@@ -39,7 +39,6 @@ O **NotificationHub** é uma plataforma completa que gerencia o ciclo de vida de
 
 ## 📁 Estrutura do Projeto
 
-\`\`\`
 NotificationHub/
 ├── client/                          # Frontend React com Vite
 │   ├── src/
@@ -109,7 +108,7 @@ NotificationHub/
 ├── jest.config.js                  # Configuração Jest
 ├── package.json                    # Dependencies do backend
 └── README.md                       # Este arquivo
-\`\`\`
+
 
 ## ⚙️ Pré-requisitos
 
@@ -472,5 +471,5 @@ Desenvolvido por Marcus Albuquerque como um sistema MVP para notificações em a
 
 ---
 
-**Última atualização:** 26 de agosto de 2026
+
 
