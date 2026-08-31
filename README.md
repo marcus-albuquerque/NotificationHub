@@ -1,4 +1,4 @@
-# NotificationHub
+﻿# NotificationHub
 
 Sistema de notificações para agricultura inteligente que processa eventos de sensores IoT, aplica regras de negócio e envia notificações aos produtores.
 
@@ -452,7 +452,59 @@ Quando uma notificação falha ao ser enviada:
 - [Guia de Setup do Banco](./database/SETUP_GUIDE.md)
 - [Plano de Implementação](./database/INDEX.md)
 
-## 🚀 Próximos Passos
+
+## 🚀 Deploy - GitHub Pages
+
+### Deploy Automático via GitHub Actions
+
+Este projeto está configurado para deploy automático no GitHub Pages usando GitHub Actions.
+
+### Configuração
+
+O workflow do GitHub Actions está localizado em `.github/workflows/github-pages.yml`. Ele:
+
+1. **Builda o frontend** (React + Vite) e envia para GitHub Pages
+2. **Builda o backend** (Node.js) para deploy separado
+3. **Monitora a branch `main`** para novos commits
+4. **Atualiza o site** automaticamente após build bem-sucedido
+
+### Como ativar
+
+1. Acesse as **Settings** do repositório no GitHub
+2. Vá em **Pages**
+3. Em **Source**, selecione **GitHub Actions**
+4. Salve as alterações
+
+### URL do Deploy
+
+Após a primeira execução do workflow, seu site estará disponível em:
+
+```
+https://<seu-usuario>.github.io/NotificationHub/
+```
+
+### Estrutura do Deploy
+
+- **Frontend (React):** `https://<usuario>.github.io/NotificationHub/`
+- **Backend (API):** Deploy separado (ex: Render, Railway, ou EC2)
+
+> **Nota:** O backend precisa ser hospedado separadamente pois GitHub Pages serving apenas arquivos estáticos.
+
+### Deploy Local do Frontend
+
+Para testar o build de produção localmente:
+
+```bash
+# Buildar frontend
+cd client
+npm run build
+
+# Preview local
+npx serve ./dist
+```
+
+---
+## 🚀 Deploy - GitHub Pages`n`n### Deploy Automático via GitHub Actions`n`nEste projeto está configurado para deploy automático no GitHub Pages usando GitHub Actions.`n`n### Configuração`n`nO workflow do GitHub Actions está localizado em `.github/workflows/github-pages.yml`. Ele:`n`n1. **Builda o frontend** (React + Vite) e envia para GitHub Pages`n2. **Builda o backend** (Node.js) para deploy separado`n3. **Monitora a branch `main`** para novos commits`n4. **Atualiza o site** automaticamente após build bem-sucedido`n`n### Como ativar`n`n1. Acesse as **Settings** do repositório no GitHub`n2. Vá em **Pages`n3. Em **Source**, selecione **GitHub Actions`n4. Salve as alterações`n`n### URL do Deploy`n`nApós a primeira execução do workflow, seu site estará disponível em:`n`n````nhttps://<seu-usuario>.github.io/NotificationHub/`n`````n`n### Estrutura do Deploy`n`n- **Frontend (React):** `https://<usuario>.github.io/NotificationHub/`n- **Backend (API):** Deploy separado (ex: Render, Railway, ou EC2)`n`n> **Nota:** O backend precisa ser hospedado separadamente pois GitHub Pages serving apenas arquivos estáticos.`n`n### Deploy Local do Frontend`n`nPara testar o build de produção localmente:`n`n```bash`n# Buildar frontend`ncd client`nnpm run build`n`n# Preview local`nnpx serve ./dist`n```n`n---`n`n## 🚀 Próximos Passos
 
 - [ ] Implementar mais endpoints de API (GET farms, producers, history)
 - [ ] Adicionar testes E2E com Playwright ou Cypress
@@ -472,6 +524,8 @@ MIT
 Desenvolvido por Marcus Albuquerque como um sistema MVP para notificações em agricultura inteligente.
 
 ---
+
+
 
 
 
