@@ -1,0 +1,9 @@
+dist
+node_modules
+build
+coverage
+.env
+.env.example
+*.md
+package-lock.json
+yarn.lock

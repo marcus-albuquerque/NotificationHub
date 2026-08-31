@@ -1,0 +1,531 @@
+{
+  "pbtResults": {
+    "8.1 Write property tests for Duplicate Detector": {
+      "status": "passed",
+      "lastRunTimestamp": 1787765855427
+    }
+  },
+  "executionHistory": {
+    "1. Initialize Node.js project with TypeScript and dependencies": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673441887
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673454697
+      }
+    ],
+    "2. Configure database schema and migrations": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673442523
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673454953
+      }
+    ],
+    "3. Set up Redis cache for duplicate detection": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673442655
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673455232
+      }
+    ],
+    "4. Set up Bull task queue for notification retries": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673442831
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673455535
+      }
+    ],
+    "5. Create TypeScript types and interfaces for domain models": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673442949
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673456049
+      }
+    ],
+    "6. Implement Event Receiver HTTP endpoint": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443072
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787674325103
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787674947162
+      }
+    ],
+    "11. Implement Notification Provider interface and MockWhatsApp implementation": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443186
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787674325522
+      },
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787674947556
+      }
+    ],
+    "13. Implement Event History data access layer": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443292
+      },
+      {
+        "executionId": "55d1b19c-389a-4dd3-aa40-4dadb6249580",
+        "chatSessionId": "sess_2b3a6f07-2974-4008-b3e4-f081250dab60",
+        "timestamp": 1787750275987
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733299
+      },
+      {
+        "executionId": "0fa75d75-8589-45d7-ba84-d00df2c4643d",
+        "chatSessionId": "sess_83c428ad-b66d-409b-8664-5fb90c156248",
+        "timestamp": 1787838253698
+      },
+      {
+        "executionId": "0fa75d75-8589-45d7-ba84-d00df2c4643d",
+        "chatSessionId": "sess_83c428ad-b66d-409b-8664-5fb90c156248",
+        "timestamp": 1787838382122
+      }
+    ],
+    "15. Checkpoint - Core pipeline functional": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443400
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733491
+      }
+    ],
+    "16. Set up React frontend with Tailwind CSS and TanStack Query": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443505
+      }
+    ],
+    "17. Implement Farm View page": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443612
+      },
+      {
+        "executionId": "11a50f1b-e6e4-4a75-8214-e76ed81e0b7a",
+        "chatSessionId": "sess_6080232a-5a0c-42d4-95e1-afb01ab22461",
+        "timestamp": 1787678197742
+      },
+      {
+        "executionId": "c4a18324-ed14-4cea-a40d-23704fb411cb",
+        "chatSessionId": "sess_e79c92c7-4bed-4e59-84d6-76fdc043aa4c",
+        "timestamp": 1787751678975
+      },
+      {
+        "executionId": "c4a18324-ed14-4cea-a40d-23704fb411cb",
+        "chatSessionId": "sess_e79c92c7-4bed-4e59-84d6-76fdc043aa4c",
+        "timestamp": 1787752599576
+      }
+    ],
+    "18. Implement Events View page": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443714
+      },
+      {
+        "executionId": "d85035f4-3ea1-432b-b5c6-243aa2b37ec7",
+        "chatSessionId": "sess_d344ef69-1fed-43ff-8799-66b2b07112e1",
+        "timestamp": 1787753858483
+      },
+      {
+        "executionId": "d85035f4-3ea1-432b-b5c6-243aa2b37ec7",
+        "chatSessionId": "sess_d344ef69-1fed-43ff-8799-66b2b07112e1",
+        "timestamp": 1787756094718
+      }
+    ],
+    "19. Implement Notifications View page": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443829
+      },
+      {
+        "executionId": "212e8155-3d04-416e-938a-ae82b1a50a8e",
+        "chatSessionId": "sess_c38452c0-e8f4-4e85-bf5f-6c13ad97655e",
+        "timestamp": 1787753521452
+      },
+      {
+        "executionId": "212e8155-3d04-416e-938a-ae82b1a50a8e",
+        "chatSessionId": "sess_c38452c0-e8f4-4e85-bf5f-6c13ad97655e",
+        "timestamp": 1787753841121
+      }
+    ],
+    "20. Implement Event Simulator form": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673443930
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752745412
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787753492812
+      }
+    ],
+    "21. Implement Farm and Producer management endpoints": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444055
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733576
+      },
+      {
+        "executionId": "1c2bf410-b8d6-4e53-aa90-25415a9960db",
+        "chatSessionId": "sess_e9fc3282-8a91-4ca1-8b60-4d0166bee393",
+        "timestamp": 1787756172114
+      },
+      {
+        "executionId": "1c2bf410-b8d6-4e53-aa90-25415a9960db",
+        "chatSessionId": "sess_e9fc3282-8a91-4ca1-8b60-4d0166bee393",
+        "timestamp": 1787756448045
+      }
+    ],
+    "22. Implement Event History query endpoints": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444160
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733658
+      },
+      {
+        "executionId": "24760e9c-565b-43c2-ac48-847a3db36df0",
+        "chatSessionId": "sess_4e012bdb-8c97-47e8-b0ee-67489e9fe87b",
+        "timestamp": 1787756485627
+      },
+      {
+        "executionId": "24760e9c-565b-43c2-ac48-847a3db36df0",
+        "chatSessionId": "sess_4e012bdb-8c97-47e8-b0ee-67489e9fe87b",
+        "timestamp": 1787757971323
+      }
+    ],
+    "23. Implement Demo Data Loader": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444269
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733740
+      },
+      {
+        "executionId": "f91ce8c1-2c5b-4c84-8af6-19426d82a2cb",
+        "chatSessionId": "sess_ad382344-0515-44f7-8a8c-7ca27dbcfe91",
+        "timestamp": 1787758001434
+      },
+      {
+        "executionId": "f91ce8c1-2c5b-4c84-8af6-19426d82a2cb",
+        "chatSessionId": "sess_ad382344-0515-44f7-8a8c-7ca27dbcfe91",
+        "timestamp": 1787759458230
+      }
+    ],
+    "24. Write unit tests for Event Receiver": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444372
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733836
+      }
+    ],
+    "25. Write unit tests for DataValidator": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444487
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733930
+      }
+    ],
+    "26. Write unit tests for DuplicateDetector": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444595
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734009
+      }
+    ],
+    "27. Write unit tests for RuleEngine": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444697
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734092
+      }
+    ],
+    "28. Write unit tests for NotificationGenerator": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444802
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734169
+      }
+    ],
+    "29. Write unit tests for NotificationDispatcher": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673444903
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734252
+      }
+    ],
+    "30. Write integration tests for Event Processing Pipeline": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445005
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734329
+      }
+    ],
+    "31. Write API endpoint tests": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445107
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734412
+      }
+    ],
+    "32. Write E2E tests for critical user flows": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445210
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734514
+      }
+    ],
+    "33. Checkpoint - All tests passing": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445314
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734596
+      }
+    ],
+    "34. Implement graceful error handling and logging": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445412
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734677
+      }
+    ],
+    "35. Optimize database queries and add caching": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445513
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734761
+      }
+    ],
+    "36. Create README and development documentation": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445631
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734845
+      }
+    ],
+    "37. Prepare deployment artifacts": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445738
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752734932
+      }
+    ],
+    "38. Final checkpoint - System end-to-end working": [
+      {
+        "executionId": "d6d4cb56-0b91-4735-af64-fb3a78a09810",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787673445848
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752735025
+      }
+    ],
+    "7. Implement Data Validator component": [
+      {
+        "executionId": "f96194b8-1e41-4921-b712-22272f64187a",
+        "chatSessionId": "sess_077ffc4a-cf6e-4866-98a1-36aa141ac8aa",
+        "timestamp": 1787675583039
+      }
+    ],
+    "12. Implement Notification Dispatcher component": [
+      {
+        "executionId": "c3890486-008c-4893-a96e-1a0989154218",
+        "chatSessionId": "sess_8fbd5c9e-e9a4-42ce-8472-2e58a37caff7",
+        "timestamp": 1787748945806
+      },
+      {
+        "executionId": "c3890486-008c-4893-a96e-1a0989154218",
+        "chatSessionId": "sess_8fbd5c9e-e9a4-42ce-8472-2e58a37caff7",
+        "timestamp": 1787749359241
+      }
+    ],
+    "14.1 Write property tests for Event History and Pipeline": [
+      {
+        "executionId": "e635778c-05f1-4cba-8cd5-327cb9518bbd",
+        "chatSessionId": "sess_0c8c747f-ddf1-42dd-b60f-9d4b995dcc0e",
+        "timestamp": 1787751640096
+      },
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733398
+      }
+    ],
+    "12.1 Write property tests for Notification Dispatcher": [
+      {
+        "executionId": "2053ccd8-f030-4e7e-96f5-07dd821b0a03",
+        "chatSessionId": "sess_67ec4673-268a-4775-a3c9-c1b989163381",
+        "timestamp": 1787752733146
+      }
+    ],
+    "10. Implement Notification Generator component": [
+      {
+        "executionId": "7d599f80-401d-41a4-be9b-97e4301a2a00",
+        "chatSessionId": "sess_b1cdddb6-75fa-4973-ad18-4d3a8500877b",
+        "timestamp": 1787759489790
+      },
+      {
+        "executionId": "7d599f80-401d-41a4-be9b-97e4301a2a00",
+        "chatSessionId": "sess_b1cdddb6-75fa-4973-ad18-4d3a8500877b",
+        "timestamp": 1787759851884
+      }
+    ],
+    "8. Implement Duplicate Detector component": [
+      {
+        "executionId": "de4e7829-9cb6-42a4-8ae0-150d45931747",
+        "chatSessionId": "sess_52412940-3f82-4d5e-a8cf-14228e77cb73",
+        "timestamp": 1787765588142
+      },
+      {
+        "executionId": "de4e7829-9cb6-42a4-8ae0-150d45931747",
+        "chatSessionId": "sess_52412940-3f82-4d5e-a8cf-14228e77cb73",
+        "timestamp": 1787765876375
+      }
+    ]
+  }
+}
