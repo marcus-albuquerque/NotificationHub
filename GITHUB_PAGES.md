@@ -34,3 +34,5 @@ npx serve ./dist
 
 - **Frontend (React):** https://<usuario>.github.io/NotificationHub/
 - **Backend (API):** Deploy separado necessário
+
+
